@@ -1,0 +1,1 @@
+Invoke-Command -ScriptBlock { Set-ItemProperty -Path "HKCU:Software\Microsoft\Windows\CurrentVersion\Policies" -Name "ActiveDesktop" -Value "0" }
