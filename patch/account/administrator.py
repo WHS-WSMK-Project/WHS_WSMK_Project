@@ -10,7 +10,7 @@ def chadminame(newname):
     
     if checkadname() == "Administrator":
         subprocess.run(['powershell', f'Rename-LocalUser -Name "Administrator" -NewName "{newname}"'])
-        print("Administrator name changed")
+        print("Administrator name changed")    
 
 
 # 결과 확인 코드
