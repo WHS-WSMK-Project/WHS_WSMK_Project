@@ -12,9 +12,9 @@ def check_exist():
     result = subprocess.run(command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     output = result.stdout.decode().strip() 
     if "Administrator" in output:
-        return True
-    else:
         return False
+    else:
+        return True
 
 # 확인 코드
 print("Rename Result:", rename_administrator())
