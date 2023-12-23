@@ -1,25 +1,25 @@
-# W-01 : 1. 계정관리 > 1.1 Administrator 계정 이름 변경 또는 보안성 강화
-
 import subprocess
-import sys
 
-def checkadname():
-    result = subprocess.run(['powershell', 'Get-LocalUser Administrator | Select-Object -ExpandProperty Name'], capture_output=True, text=True)
-    return result.stdout.strip()
+# Administrator 계정의 이름을 NewName으로 변경
+def rename_administrator():
+    command = f"wmic useraccount where name='Administrator' rename 'suan'"
+    result = subprocess.run(command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    return result
 
-def chadminame(newname):
-    
-    if checkadname() == "Administrator":
-        subprocess.run(['powershell', f'Rename-LocalUser -Name "Administrator" -NewName "{newname}"'])
-        print("Administrator name changed")  
+# 변경된 계정 목록을 가져와서 확인
+def check_exist():
+    command = "wmic useraccount get name"
+    result = subprocess.run(command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    output = result.stdout.decode().strip() 
+    if "Administrator" in output:
+        return True
     else:
-        print("No User Named Administrator") 
-        sys.exit()
+        return False
 
+# 확인 코드
+print("Rename Result:", rename_administrator())
 
-# 결과 확인 코드
-current_name = checkadname()
-print(f"Administrator name: {current_name}")
-chadminame("NewAdminName")
-changed_name = checkadname()
-print(f"changed Administrator name: {changed_name}")
+if check_exist():
+    print("Account name successfully changed")
+else:
+    print("Account name change failed")
