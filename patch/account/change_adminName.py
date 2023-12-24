@@ -1,3 +1,5 @@
+# W-01 : 1. 계정관리 > 1.1 Administrator 계정 이름 변경 또는 보안성 강화
+
 import subprocess
 
 # Administrator 계정의 이름을 NewName으로 변경

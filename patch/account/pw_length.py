@@ -1,6 +1,7 @@
 # W-49 : 1. 계정관리 > 1.10 패스워드 최소 암호 길이
 
 import subprocess
+import re
 
 def change_pwlen():
     result = subprocess.run(["powershell", "-Command", "net accounts /MINPWLEN:8"], capture_output=True, text=True)
@@ -11,17 +12,21 @@ def check_pwlen():
     check_cmd = "net accounts"
     result = subprocess.run(["powershell", "-Command", check_cmd], capture_output=True, text=True)
     output = result.stdout
-    pwoutput = "Minimum password length" in output
 
     # output중 패스워드 최소길이 항목이 8로 설정되었는지 확인
     if "Minimum password length" in output and "8" in output:
-        return True, pwoutput
+        return True
     else:
-        return False, pwoutput
+        return False
 
 # 결과 확인
-changed, check_policy = check_pwlen()
+check_cmd = "net accounts"
+result = subprocess.run(["powershell", "-Command", check_cmd], capture_output=True, text=True)
+output = result.stdout
+match = re.search(r"Minimum password length:\s+(\d+)", output)
+
+changed = check_pwlen()
 
 print("Command Execution Output:", change_pwlen())
 print("Minimum Password Length Changed:", changed)
-print("Password Policy Check Output:", check_policy)
+print("Password Policy Check Output:", match.group(0))

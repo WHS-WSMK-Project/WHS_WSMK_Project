@@ -4,6 +4,9 @@ import subprocess
 import re
 
 def remote_shutdown():
+    return 0
+
+def check_Privilege():
     # 보안 설정을 임시 파일로 내보내기
     subprocess.run("secedit /export /cfg C:\\tempsec.inf", shell=True)
 
@@ -23,7 +26,7 @@ def remote_shutdown():
         return False
 
 # 결과 확인
-if remote_shutdown():
+if check_Privilege():
     print("Now, Only the Administrator group has remote shutdown privilege.")
 else:
     print("The remote shutdown is not set correctly or cannot be determined.")

@@ -9,11 +9,11 @@ def check_pwcomplexity():
 
     # 파일에서 PasswordComplexity 값 찾기
     try:
-        with open("C:\\tempsec.inf", "r") as file:
+        with open("C:\\tempsec.inf", "r", encoding="utf-16") as file:
             contents = file.read()
             match = re.search(r"PasswordComplexity\s*=\s*(\d+)", contents)
-            if match:
-                return int(match.group(1)) == 1
+            if int(match.group(1)) == 1:
+                return True
             else:
                 return False
     except FileNotFoundError:

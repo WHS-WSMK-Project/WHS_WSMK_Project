@@ -2,10 +2,10 @@
 ### 1. 계정관리 : account
 |파일명|항목코드|항목|테스트여부|
 |:------:|:------:|:---:|:---:|
-|`change_adminName.py`|W-01|Administrator 계정 이름 변경|X|
+|`change_adminName.py`|W-01|Administrator 계정 이름 변경|O|
 |`pw_complexity.py`|W-48|패스워드 복잡성 설정|X|
-|`pw_length.py`|W-49|패스워드 최소 암호 길이|X|
-|`pw_maxperiod.py`|W-50|패스워드 최대 사용 기간|X|
+|`pw_length.py`|W-49|패스워드 최소 암호 길이|O|
+|`pw_maxperiod.py`|W-50|패스워드 최대 사용 기간|O|
 
 ### 2. 서비스 관리 : service
 |파일명|항목코드|항목|테스트여부|
