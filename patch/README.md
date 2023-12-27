@@ -9,6 +9,7 @@
 
 ### 2. 서비스 관리 : service
 |파일명|항목코드|항목|테스트여부|
+|:------:|:------:|:---:|:---:|
 |`disable_link.py`|W-16|IIS 링크 사용 금지|O|
 |'limit_upload_download.py`|W-17|IIS 파일 업로드 및 다운로드 제한|X|
 |`remove_mapping.py`|W-21|IIS 미사용 스크립트 매핑 제거|X|
@@ -16,6 +17,7 @@
 
 ### 4. 로그 관리 : log
 |파일명|항목코드|항목|테스트여부|
+|:------:|:------:|:---:|:---:|
 |`remote_registry.py`|W-35|Remote Registry Control|X|
 
 ### 5. 보안 관리 : security
