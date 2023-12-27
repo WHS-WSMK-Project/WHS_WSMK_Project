@@ -13,7 +13,7 @@ def check_status():
 
 def disable_remote_registry():
     # RemoteRegistry 상태 확인
-    start_value = check_remote_registry_status()
+    start_value = check_status()
 
     # RemoteRegistry를 사용 안함으로 변경
     if start_value and start_value != "0x4":
