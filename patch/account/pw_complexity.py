@@ -45,7 +45,3 @@ if check_pwcomplexity():
     print("Password complexity is enabled.")
 else:
     print("The password complexity is disabled or cannot be determined.")
-
-# 테스트를 위한 무한루프 실행
-while True:
-    print("loop for test")

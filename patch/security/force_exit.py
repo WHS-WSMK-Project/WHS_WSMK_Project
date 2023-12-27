@@ -46,7 +46,3 @@ if check_Privilege():
     print("Now, Only the Administrator group has remote shutdown privilege.")
 else:
     print("The remote shutdown is not set correctly or cannot be determined.")
-
-# 테스트를 위한 무한루프 실행
-while True:
-    print("loop for test")
