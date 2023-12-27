@@ -18,7 +18,7 @@
 ### 4. 로그 관리 : log
 |파일명|항목코드|항목|테스트여부|
 |:------:|:------:|:---:|:---:|
-|`remote_registry.py`|W-35|Remote Registry Control|X|
+|`remote_registry.py`|W-35|Remote Registry Control|O|
 
 ### 5. 보안 관리 : security
 |파일명|항목코드|항목|테스트여부|
