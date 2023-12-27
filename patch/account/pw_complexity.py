@@ -4,13 +4,16 @@ import subprocess
 import re
 
 def change_pwcomplexity():
+    # 현재 시스템의 보안 설정을 내보내기
     subprocess.run('secedit /export /cfg C:\\winsec.inf', check=True, shell=True)
     try:
+        # 보안 설정 파일을 열어 pattern 과 일치하는 항목 찾기
         with open("C:\\winsec.inf", 'r', encoding="utf-16") as file:
             data = file.read()
         pattern = r'PasswordComplexity\s*=\s*(\d)'
         match = re.search(pattern, data)
 
+        # 보안 설정 파일을 열어 pattern 과 일치하는 항목 찾기
         if match and match.group(1) == '1':
             print("PasswordComplexity is already set to 1.")
             return False
@@ -42,7 +45,7 @@ def check_pwcomplexity():
         return False
 
 # 결과 확인
-if(change_pwcomplexity()):
+if change_pwcomplexity():
     print("PasswordComplexity changed to 1")
 
 if check_pwcomplexity():
