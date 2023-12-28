@@ -14,10 +14,10 @@ from service import remove_mapping
 from service import disable_WebDAV
 
 # 3. 로그 관리
-from patch.log import remote_registry
+from log import remote_registry
 
 # 5. 보안 관리
-from patch.security import force_exit
+from security import force_exit
 
 
 # 확인 코드
