@@ -13,8 +13,3 @@ def set_limit(limit_bytes):
         print("setting upload and download failed")
         print(result.stderr)
         sys.exit()
-
-limit_bytes = 1048576
-
-print(f"Current upload and download limit: {current_limit} bytes")
-set_limit(limit_bytes)
