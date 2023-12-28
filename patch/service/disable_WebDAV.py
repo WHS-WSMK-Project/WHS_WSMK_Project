@@ -1,27 +1,28 @@
 import xml.etree.ElementTree as ET
+import os
 
-def disable_webdav(xml_path):
-    # XML 파일 불러오기
-    tree = ET.parse(xml_path)
-    root = tree.getroot()
+def disable_webdav(filepath):
+    try:
+        tree = ET.parse(filepath)
+        root = tree.getroot()
 
-    # WebDAV 룰의 경로
-    webdav_path = ".//system.webServer/webdav/authoring/rules/rule"
+        isapi_cgi_restriction = root.find(".//isapiCgiRestriction")
 
-    # WebDAV 룰 찾기
-    webdav_rule = root.find(webdav_path)
+        if isapi_cgi_restriction is not None:
+            webdav_add_element = isapi_cgi_restriction.find('.//add[@path="%windir%\\system32\\inetsrv\\webdav.dll"]')
 
-    if webdav_rule is not None:
-        # 'allowed' 속성 값을 "false"로 변경
-        webdav_rule.set('allowed', 'false')
-        # 변경된 내용 저장
-        tree.write(xml_path)
-        print("WebDAV is disabled.")
-    else:
-        print("WebDAV is not found..")
+            if webdav_add_element is not None:
+                webdav_add_element.set('allowed', 'false')
+                tree.write(filepath)
+                print("WebDAV disabled successfully.")
+            else:
+                print("WebDAV element not found in the configuration.")
+        else:
+            print("isapiCgiRestriction element not found in the configuration.")
 
-# 파일 경로 설정
-xml_file_path = 'C:\\Windows\\System32\\inetsrv\\config\\applicationHost.config'
+    except Exception as e:
+        print(f"An error occurred: {e}")
 
-# 함수 호출
-disable_webdav(xml_file_path)
+config_path = r'C:\Windows\System32\inetsrv\config\applicationHost.config'
+
+disable_webdav(config_path)
