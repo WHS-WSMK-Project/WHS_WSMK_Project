@@ -1,3 +1,5 @@
+# W-23 : 2. 서비스관리 > 2.17 IIS WebDAV 비활성화
+
 import xml.etree.ElementTree as ET
 import os
 
