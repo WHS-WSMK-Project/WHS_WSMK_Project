@@ -40,25 +40,21 @@ def main():
         print("The password complexity is disabled or cannot be determined.")
 
     # W-49 : 1. 계정관리 > 1.10 패스워드 최소 암호 길이
+
+    print("Command Execution Output:", pw_length.change_pwlen())
+    print("Minimum Password Length Changed:", pw_length.check_pwlen())
     result = subprocess.run(["powershell", "-Command", "net accounts"], capture_output=True, text=True)
     output = result.stdout
     match = re.search(r"Minimum password length:\s+(\d+)", output)
-
-    changed = pw_length.check_pwlen()
-
-    print("Command Execution Output:", pw_length.change_pwlen())
-    print("Minimum Password Length Changed:", changed)
     print("Password Policy Check Output:", match.group(0))
 
     # W-50 : 1. 계정관리 > 1.11 패스워드 최대 사용 기간
+
+    print("Command Execution Output:", pw_maxperiod.change_maxperiod())
+    print("Maximum password age Changed:", pw_maxperiod.check_maxperiod())
     result = subprocess.run(["powershell", "-Command", "net accounts"], capture_output=True, text=True)
     output = result.stdout
     match = re.search(r"Maximum password age \(days\):\s+(\d+)", output)
-
-    changed = pw_maxperiod.check_maxperiod()
-
-    print("Command Execution Output:", pw_maxperiod.change_maxperiod())
-    print("Maximum password age Changed:", changed)
     print("Password Policy Check Output:", match.group(0))
 
     # W-16 : 2. 서비스관리 > 2.10 IIS 링크 사용 금지
