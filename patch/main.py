@@ -91,5 +91,5 @@ def main():
     else:
         print("The remote shutdown is not set correctly or cannot be determined.")
 
-    if __name__ == "__main__":
-        main()
+if __name__ == "__main__":
+    main()
