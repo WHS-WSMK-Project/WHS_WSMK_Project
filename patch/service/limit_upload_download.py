@@ -4,13 +4,17 @@ import subprocess
 import sys
 
 def set_limit(limit_bytes):
-		#파워쉘 명령어 생성해서 업로드 및 다운로드 크기 제한을 설정
     powershell_command = f'Set-WebConfiguration -Filter "/system.webServer/security/requestFiltering/requestLimits" -PSPath "IIS:" -Value @{{maxAllowedContentLength = {limit_bytes}}}'
     result = subprocess.run(['powershell', powershell_command], capture_output=True, text=True)
     
     if result.returncode == 0:
-        print(f"Upload and download limit set to {limit_bytes} bytes")
+        print(f"Upload and download limits are set to {limit_bytes} bytes.")
     else:
-        print("Failed to set upload and download limit")
+        print("setting upload and download failed")
         print(result.stderr)
         sys.exit()
+
+limit_bytes = 1048576
+
+print(f"Current upload and download limit: {current_limit} bytes")
+set_limit(limit_bytes)
