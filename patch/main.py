@@ -2,22 +2,22 @@ import subprocess
 import re
 
 # 1. 계정 관리
-from .account import change_adminName
-from .account import pw_complexity
-from .account import pw_length
-from .account import pw_maxperiod
+from patch.account import change_adminName
+from patch.account import pw_complexity
+from patch.account import pw_length
+from patch.account import pw_maxperiod
 
 # 2. 서비스 관리
-from .service import disable_link
-from .service import limit_upload_download
-from .service import remove_mapping
-from .service import disable_WebDAV
+from patch.service import disable_link
+from patch.service import limit_upload_download
+from patch.service import remove_mapping
+from patch.service import disable_WebDAV
 
 # 3. 로그 관리
-from .log import remote_registry
+from patch.log import remote_registry
 
 # 5. 보안 관리
-from .security import force_exit
+from patch.security import force_exit
 
 
 # 확인 코드
