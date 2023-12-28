@@ -90,3 +90,6 @@ def main():
         print("Now, Only the Administrator group has remote shutdown privilege.")
     else:
         print("The remote shutdown is not set correctly or cannot be determined.")
+
+    if __name__ == "__main__":
+        main()
