@@ -1,3 +1,5 @@
+# W-16 : 2. 서비스관리 > 2.10 IIS 링크 사용 금지
+
 import subprocess
 import sys
 
