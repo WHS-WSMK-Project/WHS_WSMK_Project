@@ -23,6 +23,3 @@ def disable_remote_registry():
         print("RemoteRegistry has been changed to disabled.")
     else:
         print("RemoteRegistry is already disabled.")
-
-# RemoteRegistry 비활성화 함수 호출
-disable_remote_registry()

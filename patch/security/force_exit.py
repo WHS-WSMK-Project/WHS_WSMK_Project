@@ -37,12 +37,3 @@ def check_Privilege():
             return privileges == ['*S-1-5-32-544']
         else:
             return False
-
-# 결과 확인
-if remote_shutdown():
-    print("remote shutdown privilege changed")
-
-if check_Privilege():
-    print("Now, Only the Administrator group has remote shutdown privilege.")
-else:
-    print("The remote shutdown is not set correctly or cannot be determined.")

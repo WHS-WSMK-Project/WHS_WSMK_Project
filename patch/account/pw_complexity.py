@@ -36,12 +36,3 @@ def check_pwcomplexity():
             return True
         else:
             return False
-
-# 결과 확인
-if change_pwcomplexity():
-    print("PasswordComplexity changed to 1")
-
-if check_pwcomplexity():
-    print("Password complexity is enabled.")
-else:
-    print("The password complexity is disabled or cannot be determined.")

@@ -19,6 +19,3 @@ def disable_directory_browsing():
         print("Failed to disable")
         print(result.stderr)
         sys.exit()
-
-# 디렉터리 브라우징 비활성화 함수 호출
-disable_directory_browsing()

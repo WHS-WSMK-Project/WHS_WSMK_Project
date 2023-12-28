@@ -17,11 +17,3 @@ def check_exist():
         return False
     else:
         return True
-
-# 확인 코드
-print("Rename Result:", rename_administrator())
-
-if check_exist():
-    print("Account name successfully changed")
-else:
-    print("Account name change failed")

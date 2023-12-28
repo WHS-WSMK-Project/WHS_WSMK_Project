@@ -18,15 +18,3 @@ def check_maxperiod():
         return True
     else:
         return False
-
-# 결과 확인
-check_cmd = "net accounts"
-result = subprocess.run(["powershell", "-Command", check_cmd], capture_output=True, text=True)
-output = result.stdout
-match = re.search(r"Maximum password age \(days\):\s+(\d+)", output)
-
-changed = check_maxperiod()
-
-print("Command Execution Output:", change_maxperiod())
-print("Maximum password age Changed:", changed)
-print("Password Policy Check Output:", match.group(0))

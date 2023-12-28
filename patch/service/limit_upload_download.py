@@ -14,10 +14,3 @@ def set_limit(limit_bytes):
         print("Failed to set upload and download limit")
         print(result.stderr)
         sys.exit()
-
-# 업로드 및 다운로드 크기 제한을 1MB로 설정
-limit_bytes(1048576)
-
-# 결과 확인
-print(f"Current upload and download limit: {current_limit} bytes")
-set_limit(limit_bytes)

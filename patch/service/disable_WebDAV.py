@@ -24,7 +24,3 @@ def disable_webdav(filepath):
 
     except Exception as e:
         print(f"An error occurred: {e}")
-
-config_path = r'C:\Windows\System32\inetsrv\config\applicationHost.config'
-
-disable_webdav(config_path)
