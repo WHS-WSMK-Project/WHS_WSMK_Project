@@ -16,6 +16,3 @@ def remove_lnk_files(directory):
     # 변경된 내용이 없을 경우 메시지 출력
     if not any(file.endswith(".lnk") for file in files):
         print("No .lnk files found. No changes made.")
-
-# C:\inetpub\wwwroot 디렉터리에서 .lnk 파일 삭제
-remove_lnk_files(r'C:\inetpub\wwwroot')
