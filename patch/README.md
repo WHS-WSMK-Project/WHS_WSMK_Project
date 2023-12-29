@@ -12,7 +12,7 @@
 |:------:|:------:|:---:|:---:|
 |`disable_link.py`|W-16|IIS 링크 사용 금지|O|
 |`limit_upload_download.py`|W-17|IIS 파일 업로드 및 다운로드 제한|O|
-|`remove_mapping.py`|W-21|IIS 미사용 스크립트 매핑 제거|△|
+|`remove_mapping.py`|W-21|IIS 미사용 스크립트 매핑 제거|O|
 |`disable_WebDAV.py`|W-23|IIS WebDAV 비활성화|O|
 
 ### 4. 로그 관리 : log
