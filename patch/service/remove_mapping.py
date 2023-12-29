@@ -30,6 +30,3 @@ def remove_script_mappings(config_path):
         print(f"Error: File not found - {config_path}")
     except Exception as e:
         print(f"An error occurred: {e}")
-
-iis_config_path = r'C:\Windows\System32\inetsrv\config\applicationHost.config'
-remove_script_mappings(iis_config_path)
