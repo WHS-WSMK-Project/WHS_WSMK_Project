@@ -58,7 +58,7 @@ def main():
     print("Password Policy Check Output:", match.group(0))
 
     # W-16 : 2. 서비스관리 > 2.10 IIS 링크 사용 금지
-    disable_link.disable_directory_browsing()
+    disable_link.remove_lnk_files(r'C:\inetpub\wwwroot')
 
     # W-17 : 2. 서비스관리 > 2.11 IIS 파일 업로드 및 다운로드 제한
     limit_bytes = 1048576
@@ -66,9 +66,8 @@ def main():
     limit_upload_download.set_limit(limit_bytes)
 
     # W-21 : 2. 서비스관리 > 2.15 IIS 미사용 스크립트 매핑 제거
-    config_file_path = r'C:\Windows\System32\inetsrv\config\applicationHost.config'
-    remove_mapping.remove_script_mappings(config_file_path)
-    print("Script mappings removed successfully.")
+    iis_config_path = r'C:\Windows\System32\inetsrv\config\applicationHost.config'
+    remove_mapping.remove_script_mappings(iis_config_path)
 
 
     # W-23 : 2. 서비스관리 > 2.17 IIS WebDAV 비활성화
