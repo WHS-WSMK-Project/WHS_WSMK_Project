@@ -1,21 +1,21 @@
 # W-16 : 2. 서비스관리 > 2.10 IIS 링크 사용 금지
 
-import subprocess
-import sys
+import os
 
-def disable_directory_browsing():
-    # PowerShell 명령어
-    powershell_command = '''
-    Set-WebConfigurationProperty -Filter '/system.webServer/directoryBrowse' -PSPath 'IIS:\' -Name enabled -Value $false
-    '''
+def remove_lnk_files(directory):
+    # 디렉터리 내의 모든 파일 목록 가져오기
+    files = os.listdir(directory)
 
-    # PowerShell 명령어 실행
-    result = subprocess.run(['powershell', '-Command', powershell_command], capture_output=True, text=True)
+    # .lnk 확장자를 가진 파일 삭제
+    for file in files:
+        if file.endswith(".lnk"):
+            file_path = os.path.join(directory, file)
+            os.remove(file_path)
+            print(f"Removed .lnk file: {file_path}")
 
-    # 실행 결과 확인
-    if result.returncode == 0:
-        print("Disabled successfully")
-    else:
-        print("Failed to disable")
-        print(result.stderr)
-        sys.exit()
+    # 변경된 내용이 없을 경우 메시지 출력
+    if not any(file.endswith(".lnk") for file in files):
+        print("No .lnk files found. No changes made.")
+
+# C:\inetpub\wwwroot 디렉터리에서 .lnk 파일 삭제
+remove_lnk_files(r'C:\inetpub\wwwroot')
