@@ -14,7 +14,6 @@ def change_pwcomplexity():
 
     # 이미 PasswordComplexity = 1 이면 문구 출력 후 리턴
     if match and match.group(1) == '1':
-        print("PasswordComplexity is already set to 1.")
         return False
     # PasswordComplexity = 0 을 1로 변경후 보안 설정 저장
     else:

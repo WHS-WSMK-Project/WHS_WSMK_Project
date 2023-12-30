@@ -15,7 +15,6 @@ def remove_script_mappings(config_path):
         changes_made = False
 
         for match in matches:
-            path_to_remove = match.group(1)
             config_content = config_content.replace(match.group(0), '') 
             changes_made = True
 
