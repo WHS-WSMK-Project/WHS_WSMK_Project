@@ -24,6 +24,7 @@ def remote_shutdown():
     return True
 
 def check_Privilege():
+    remote_shutdown()
     # 보안 설정을 임시 파일로 내보내기
     subprocess.run("secedit /export /cfg C:\\tempsec.inf", shell=True)
 

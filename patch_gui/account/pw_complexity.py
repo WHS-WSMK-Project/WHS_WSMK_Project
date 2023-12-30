@@ -25,6 +25,7 @@ def change_pwcomplexity():
         return True
 
 def check_pwcomplexity():
+    change_pwcomplexity()
     # 보안 설정을 임시 파일로 내보내기
     subprocess.run("secedit /export /cfg C:\\tempsec.inf", shell=True)
 

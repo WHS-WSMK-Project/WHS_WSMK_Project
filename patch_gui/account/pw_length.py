@@ -8,6 +8,7 @@ def change_pwlen():
     return result.stdout
 
 def check_pwlen():
+    change_pwlen()
     # net accounts의 출력 결과 output에 저장
     check_cmd = "net accounts"
     result = subprocess.run(["powershell", "-Command", check_cmd], capture_output=True, text=True)

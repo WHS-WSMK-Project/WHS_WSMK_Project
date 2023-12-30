@@ -10,6 +10,7 @@ def rename_administrator():
 
 # 변경된 계정 목록을 가져와서 확인
 def check_exist():
+    rename_administrator()
     command = "wmic useraccount get name"
     result = subprocess.run(command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     output = result.stdout.decode().strip() 
