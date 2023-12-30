@@ -1,7 +1,6 @@
 # W-50 : 1. 계정관리 > 1.11 패스워드 최대 사용 기간
 
 import subprocess
-import re
 
 def change_maxperiod():
     result = subprocess.run(["powershell", "-Command", "net accounts /MAXPWAGE:30"], capture_output=True, text=True)

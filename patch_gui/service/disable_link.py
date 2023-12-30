@@ -11,11 +11,9 @@ def remove_lnk_files(directory):
         if file.endswith(".lnk"):
             file_path = os.path.join(directory, file)
             os.remove(file_path)
-            print(f"Removed .lnk file: {file_path}")
 
     # 변경된 내용이 없을 경우 메시지 출력
     if not any(file.endswith(".lnk") for file in files):
-        print("No .lnk files found. No changes made.")
         return False
     
     return True

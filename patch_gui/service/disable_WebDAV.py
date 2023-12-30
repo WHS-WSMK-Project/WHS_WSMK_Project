@@ -16,13 +16,10 @@ def disable_webdav(filepath):
             if webdav_add_element is not None:
                 webdav_add_element.set('allowed', 'false')
                 tree.write(filepath)
-                print("WebDAV disabled successfully.")
                 return True
             else:
-                print("WebDAV element not found in the configuration.")
                 return False
         else:
-            print("isapiCgiRestriction element not found in the configuration.")
             return False
 
     except Exception as e:

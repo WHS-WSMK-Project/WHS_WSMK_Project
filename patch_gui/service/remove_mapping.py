@@ -17,11 +17,9 @@ def remove_script_mappings(config_path):
         for match in matches:
             path_to_remove = match.group(1)
             config_content = config_content.replace(match.group(0), '') 
-            print(f"Removed handler for path: {path_to_remove}")
             changes_made = True
 
         if not changes_made:
-            print("No changes made. Matching handlers not found.")
             return False
 
         with open(config_path, 'w') as file:

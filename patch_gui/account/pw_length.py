@@ -1,7 +1,6 @@
 # W-49 : 1. 계정관리 > 1.10 패스워드 최소 암호 길이
 
 import subprocess
-import re
 
 def change_pwlen():
     result = subprocess.run(["powershell", "-Command", "net accounts /MINPWLEN:8"], capture_output=True, text=True)

@@ -8,8 +8,6 @@ def set_limit(limit_bytes):
     result = subprocess.run(['powershell', powershell_command], capture_output=True, text=True)
     
     if result.returncode == 0:
-        print(f"Upload and download limits are set to {limit_bytes} bytes.")
         return True
     else:
-        print("setting upload and download failed")
         return False
