@@ -1,9 +1,16 @@
 # WHS_WSMK_Project
 WHS_WSMK_Project-Development
 
+# 완성된 패치
+## GUI ver 
+#### 1. [패치 다운로드 링크 바로가기](https://drive.google.com/file/d/121IFP6iinKRhK7i-zCzLFdLvDIMpsLqD/view?usp=sharing) 
+#### 2. patch_gui 폴더를 `C:` 아래 위치시킬것 → `C:\patch_gui`
+#### 3. 해당 파일의 경로 :  `dist/MSWK.exe`
+## CLI ver
+
+
 # 중요:
 vmware 환경에서 실습하고 push!
-
 
 # python 라이브러리 구축 :
 pip install pyqt5
