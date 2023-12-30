@@ -16,8 +16,11 @@ from log import remote_registry
 # 5. 보안 관리
 from security import force_exit
 
+import sys
+import os
 import tkinter as tk
 from tkinter import PhotoImage
+from PIL import Image, ImageTk
 
 # 메인 윈도우 및 이벤트 함수 구현
 class MainApplication(tk.Tk):
@@ -60,9 +63,16 @@ class MainApplication(tk.Tk):
 class StartScreen(tk.Frame):
     def __init__(self, master):
         super().__init__(master)
-        logo_image = PhotoImage(file="logo.png")
+        if getattr(sys, 'frozen', False):
+            base_path = sys._MEIPASS
+        else:
+            base_path = os.path.dirname(__file__)
+            
+        logo_path = os.path.join(base_path,'patch', 'logo.png')
+        image = Image.open(logo_path)
+        logo_image = ImageTk.PhotoImage(image)
         logo_label = tk.Label(self, image=logo_image)
-        logo_label.image = logo_image
+        logo_label.image = logo_image  
         logo_label.pack(pady=20)
 
         text_label = tk.Label(self, text='WSMK Analytical Tools', font=('Arial', 22))
