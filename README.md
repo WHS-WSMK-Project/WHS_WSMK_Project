@@ -23,4 +23,4 @@ vmware 환경에서 실습하고 push!
 `pip install Pillow`
 
 # 테스트 환경
-Windows server 2012 R2
+- Windows server 2012 R2
