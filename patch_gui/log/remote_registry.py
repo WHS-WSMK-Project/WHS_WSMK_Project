@@ -20,9 +20,9 @@ def disable_remote_registry():
     # RemoteRegistry를 사용 안함으로 변경
     if start_value and start_value != "0x4":
         subprocess.run(['reg', 'add', 'HKLM\SYSTEM\CurrentControlSet\Services\RemoteRegistry', '/v', 'Start', '/t', 'REG_DWORD', '/d', '4', '/f'])
-        print("RemoteRegistry has been changed to disabled.")
+    
+    start_value = check_status()
+    if start_value and start_value == "0x4":
         return True
     else:
-        print("RemoteRegistry is already disabled.")
         return False
-    
