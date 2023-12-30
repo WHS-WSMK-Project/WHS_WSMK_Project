@@ -1,7 +1,7 @@
 ## 패치 사용법 (CLI ver)
 #### 1. github에 위치한 `patch` 폴더 다운로드
 #### 2. patch 폴더를 `C:` 아래 위치시킬것 → `C:\patch`
-#### 3. 해당 파일의 경로 :  `dist/MSWK.exe`
+#### 3. 해당 파일의 경로 :  `dist/WSMK.exe`
 
 ## 패치 기능 구현 
 ### 1. 계정관리 : account
