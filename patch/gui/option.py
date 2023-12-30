@@ -65,7 +65,7 @@ for category, frame in frames.items():
 bottom_frame = tk.Frame(root)
 bottom_frame.grid(row=3, column=0, columnspan=2, pady=10)
 
-go_button = tk.Button(bottom_frame, text="Go", command=lambda: on_button_click("Go"))
+go_button = tk.Button(bottom_frame, text="Patch", command=lambda: on_button_click("Go"))
 go_button.pack(side=tk.RIGHT)
 
 back_button = tk.Button(bottom_frame, text="Back", command=lambda: on_button_click("Back"))
