@@ -15,4 +15,7 @@ WHS_WSMK_Project-Development
 vmware 환경에서 실습하고 push!
 
 # python 라이브러리 구축 :
-pip install pyqt5
+### 실행파일 제작관련 
+`pip install pyinstaller`
+### GUI 구현 관련
+`pip install Pillow`
