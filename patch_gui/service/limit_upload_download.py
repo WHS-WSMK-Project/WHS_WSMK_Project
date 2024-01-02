@@ -3,7 +3,7 @@
 import subprocess
 import sys
 
-def set_limit(limit_bytes):
+def set_limit(limit_bytes=1048576):
     powershell_command = f'Set-WebConfiguration -Filter "/system.webServer/security/requestFiltering/requestLimits" -PSPath "IIS:" -Value @{{maxAllowedContentLength = {limit_bytes}}}'
     result = subprocess.run(['powershell', powershell_command], capture_output=True, text=True)
     
