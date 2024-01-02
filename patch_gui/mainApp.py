@@ -19,7 +19,6 @@ from security import force_exit
 import sys
 import os
 import tkinter as tk
-from tkinter import PhotoImage
 from PIL import Image, ImageTk
 
 # 메인 윈도우 및 이벤트 함수 구현
@@ -81,7 +80,6 @@ class StartScreen(tk.Frame):
         # Go 버튼 생성, 배치, 연결
         go_button = tk.Button(self, text='Go', command=master.show_option_screen)
         go_button.pack(pady=40)
-        # go_button.place(width=100, height=40, x=115, y=250)
 
 class OptionScreen(tk.Frame):
     def __init__(self, master):
