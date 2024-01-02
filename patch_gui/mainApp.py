@@ -171,10 +171,10 @@ class ResultScreen(tk.Frame):
                 ("패스워드 최대 사용 기간 설정", pw_maxperiod.check_maxperiod())
             ],
             "서비스관리": [
-                ("IIS 링크 사용 금지", disable_link.remove_lnk_files(r'C:\inetpub\wwwroot')),
-                ("IIS 파일 업로드 및 다운로드 제한", limit_upload_download.set_limit(1048576)),
-                ("IIS 미사용 스크립트 매핑 제거", remove_mapping.remove_script_mappings(r'C:\Windows\System32\inetsrv\config\applicationHost.config')),
-                ("IIS WebDAV 비활성화", disable_WebDAV.disable_webdav(r'C:\Windows\System32\inetsrv\config\applicationHost.config'))
+                ("IIS 링크 사용 금지", disable_link.remove_lnk_files()),
+                ("IIS 파일 업로드 및 다운로드 제한", limit_upload_download.set_limit()),
+                ("IIS 미사용 스크립트 매핑 제거", remove_mapping.remove_script_mappings()),
+                ("IIS WebDAV 비활성화", disable_WebDAV.disable_webdav())
             ],
             "로그관리": [("Remote Registry Control 사용안함", remote_registry.disable_remote_registry())],
             "보안 관리": [("원격 시스템에서 강제로 시스템 종료 방지", force_exit.check_Privilege())]
