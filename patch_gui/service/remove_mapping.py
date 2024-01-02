@@ -8,7 +8,7 @@ def remove_script_mappings(config_path):
         with open(config_path, 'r') as file:
             config_content = file.read()
 
-        pattern = r'<add name="[^"]+" path="(\.(htr|idc|stm|shtm|shtml|printer|htw|ida|idq))" .* />'
+        pattern = r'<add name="[^"]+" path="(\*(\.htr|\.idc|\.stm|\.shtml|\.printer|\.htw|\.ida|\.idp))" .* />'
         matches = re.finditer(pattern, config_content, re.IGNORECASE)
 
 
