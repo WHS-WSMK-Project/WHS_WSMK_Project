@@ -2,7 +2,7 @@
 
 import os
 
-def remove_lnk_files(directory):
+def remove_lnk_files(directory=r'C:\inetpub\wwwroot'):
     # 디렉터리 내의 모든 파일 목록 가져오기
     files = os.listdir(directory)
 
