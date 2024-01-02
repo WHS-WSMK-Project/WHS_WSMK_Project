@@ -3,7 +3,7 @@
 
 import re
 
-def remove_script_mappings(config_path):
+def remove_script_mappings(config_path=r'C:\Windows\System32\inetsrv\config\applicationHost.config'):
     try:
         with open(config_path, 'r') as file:
             config_content = file.read()
