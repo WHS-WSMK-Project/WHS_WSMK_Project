@@ -3,7 +3,7 @@
 import xml.etree.ElementTree as ET
 import os
 
-def disable_webdav(filepath):
+def disable_webdav(filepath=r'C:\Windows\System32\inetsrv\config\applicationHost.config'):
     try:
         tree = ET.parse(filepath)
         root = tree.getroot()
