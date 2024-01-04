@@ -20,6 +20,7 @@ import sys
 import os
 import tkinter as tk
 from PIL import Image, ImageTk
+from tkinter import messagebox
 
 # 메인 윈도우 및 이벤트 함수 구현
 class MainApplication(tk.Tk):
@@ -199,8 +200,13 @@ class ResultScreen(tk.Frame):
         bottom_frame = tk.Frame(self)
         bottom_frame.grid(row=3, column=0, columnspan=2, pady=10)
 
-        close_button = tk.Button(bottom_frame, text="Close", command=self.close_window)
+        close_button = tk.Button(bottom_frame, text="Close", command=self.show_close_message)
         close_button.pack(side=tk.RIGHT)
+
+    def show_close_message(self):
+        response = messagebox.askokcancel("Password Policy Changed", "비밀번호 정책이 변경되었습니다. 비밀번호를 변경하시기 바랍니다.")
+        if response:
+            self.close_window()
 
     def close_window(self):
         self.master.destroy()
