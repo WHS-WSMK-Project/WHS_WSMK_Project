@@ -1,5 +1,5 @@
 ## 패치 사용법 (GUI ver)
-#### 1. [패치 다운로드 링크 바로가기](https://drive.google.com/file/d/1FUXtsWP2mAT3gtHzCpLhzwPvy35EyZCC/view?usp=sharing)
+#### 1. [패치 다운로드 링크 바로가기](https://drive.google.com/file/d/1JEC_ltP6WbsrbyvuUqMKSpVI0yeq0OTy/view?usp=sharing)
 #### 2. patch_gui 폴더를 `C:` 아래 위치시킬것 → `C:\patch_gui`
 #### 3. 해당 파일의 경로 :  `dist/MSWK.exe`
 
